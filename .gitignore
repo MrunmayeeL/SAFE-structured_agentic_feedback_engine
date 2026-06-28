@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# VSCode settings
+.vscode/
+
+# Credentials and environment configurations
+.env
+key
+
+# Project-specific execution logs and intermediate files
+logs/
+results/logs/
+results/examples/
+results_old/
+results.zip
