@@ -1,4 +1,4 @@
-# SAFE : Structured Agentic Feedback Engine
+# SAFE: Structured Agentic Feedback Engine
 
 
 **SAFE (Structured Agentic Feedback Engine)** is an experimental Automated Program Repair (APR) framework designed to demonstrate the advantages of localized structured feedback and precise AST integration over naive full-context LLM prompting.
@@ -7,14 +7,14 @@ By utilizing runtime execution feedback, extracting localized buggy contexts, cl
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 SAFE operates as an iterative feedback loop that isolates, diagnoses, and repairs bugs locally instead of querying the LLM to rewrite entire code files from scratch.
 
 ```mermaid
 graph TD
     A[Start: Buggy Code + Tests] --> B[Executor: Run Code & Tests]
-    B -->|Success| C[✅ Bug Repaired]
+    B -->|Success| C[Bug Repaired]
     B -->|Failure: Capture Exception/Traceback| D[Classifier: Classify Error Type]
     D --> E[Analyzer: Traceback Snippet Analysis]
     E --> F[Strategy Selector: Select Repair Intervention]
@@ -25,7 +25,7 @@ graph TD
 
 ---
 
-## 🧩 Pipeline Components
+## Pipeline Components
 
 1. **Executor (`safe/executor.py`)**: Runs the target Python program against its designated test cases. It intercepts stdout, stderr, and tracebacks, detecting timeouts (possible infinite loops) or assertion failures.
 2. **Classifier (`safe/classifier.py`)**: Categorizes errors into specific groups (e.g., `AssertionError`, `IndexError`, `TypeError`, `Timeout`, or general `LogicError`) to inform the model of the bug's nature.
@@ -36,7 +36,7 @@ graph TD
 
 ---
 
-## 📊 Empirical Evaluation
+## Empirical Evaluation
 
 We benchmarked **SAFE v2** against a **Naive Prompting Baseline** using the Python subset of the **QuixBugs** benchmark (evaluating 25 unique bugs). The baseline prompts the LLM with the entire file context and raw traceback, requesting a complete file replacement.
 
@@ -47,9 +47,9 @@ Both systems were configured using local LLMs hosted via Ollama.
 | Metric | Naive Baseline | SAFE v2 (Ours) | Delta |
 | :--- | :---: | :---: | :---: |
 | **Repair Success Rate** | 28.0% (7/25) | **32.0% (8/25)** | **+4.0%** |
-| **Patch Minimality (Avg Changed Lines)** | 24.04 lines | **10.00 lines** | **-58.4%** 📉 |
-| **Avg Prompt Size (Chars/Tokens)** | 1,150.41 | **1,055.15** | **-8.3%** 📉 |
-| **Syntax Validity Rate** | 96.8% | **100.0%** | **+3.2%** 🚀 |
+| **Patch Minimality (Avg Changed Lines)** | 24.04 lines | **10.00 lines** | **-58.4%** 📉|
+| **Avg Prompt Size (Chars/Tokens)** | 1,150.41 | **1,055.15** | **-8.3%**  |
+| **Syntax Validity Rate** | 96.8% | **100.0%** | **+3.2%**  |
 | **Hallucination Detection Rate** | 0.0% | 4.0% | +4.0% |
 | **Avg Iterations to Repair** | 4.24 loops | **4.12 loops** | **-2.8%** |
 
@@ -60,7 +60,7 @@ Both systems were configured using local LLMs hosted via Ollama.
 
 ---
 
-## 📈 Visualizations
+## Visualizations
 
 The following plots were generated from the experimental dataset (`results/all_results.json`):
 
@@ -76,7 +76,7 @@ The following plots were generated from the experimental dataset (`results/all_r
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 SAFE/
@@ -111,7 +111,7 @@ SAFE/
 
 ---
 
-## 🚀 Setup & Execution
+## Setup & Execution
 
 ### 1. Prerequisites
 - **Python**: version `3.10` or higher
