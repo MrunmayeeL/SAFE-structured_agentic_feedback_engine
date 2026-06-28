@@ -1,9 +1,5 @@
-# SAFE v2: Structured Agentic Feedback Engine
+# SAFE : Structured Agentic Feedback Engine
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](requirements.txt)
-[![CI Status](https://img.shields.io/badge/CI-Active-green.svg)](.github/workflows/ci.yml)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](.github/ISSUE_TEMPLATE/feature_request.md)
 
 **SAFE (Structured Agentic Feedback Engine)** is an experimental Automated Program Repair (APR) framework designed to demonstrate the advantages of localized structured feedback and precise AST integration over naive full-context LLM prompting.
 
@@ -160,8 +156,4 @@ To test a single bug locally in debugging mode:
 python main.py
 ```
 
----
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
