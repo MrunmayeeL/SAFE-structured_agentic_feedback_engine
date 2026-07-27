@@ -1,7 +1,7 @@
 # SAFE: Structured Agentic Feedback Engine
 
 
-**SAFE (Structured Agentic Feedback Engine)** is an experimental Automated Program Repair (APR) framework designed to demonstrate the advantages of localized structured feedback and precise AST integration over naive full-context LLM prompting.
+**SAFE (Structured Agentic Feedback Engine)** is an experimental Automated Program Repair (APR) framework designed to demonstrate the advantages of localized structured feedback and precise AST integration over naive full-context LLM prompting using a multi-agent system.
 
 By utilizing runtime execution feedback, extracting localized buggy contexts, classifying errors, and integrating patches directly back into the target abstract syntax tree (AST), SAFE achieves equivalent or higher repair success rates while drastically reducing patch sizes and maintaining perfect syntactical output.
 
